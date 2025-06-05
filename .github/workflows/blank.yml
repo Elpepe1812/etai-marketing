@@ -1,0 +1,131 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest{
+  "version": "0.4",
+  "title": "ETAI Landing Page - Full",
+  "type": "page",
+  "content": [
+    {
+      "id": "section-hero",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#0d1b2a",
+        "content_width": "boxed"
+      },
+      "elements": [
+        {
+          "id": "logo",
+          "elType": "widget",
+          "widgetType": "image",
+          "settings": {
+            "image": {
+              "url": "https://via.placeholder.com/200x60?text=ETAI+LOGO"
+            },
+            "alignment": "center"
+          }
+        },
+        {
+          "id": "headline",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "העתיד של השיווק – עכשיו",
+            "title_color": "#f9c846",
+            "align": "center",
+            "size": "xl"
+          }
+        },
+        {
+          "id": "intro",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "שיווק מבוסס בינה מלאכותית שמייצר תוצאות אמיתיות",
+            "align": "center",
+            "text_color": "#ffffff"
+          }
+        },
+        {
+          "id": "services-header",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "השירותים שלנו",
+            "title_color": "#ffffff",
+            "align": "right",
+            "size": "lg"
+          }
+        },
+        {
+          "id": "services-list",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<ul><li>🔹 בניית דפי נחיתה ממירים</li><li>🔹 בניית אתרים חכמים</li><li>🔹 בניית אסטרטגיות שיווק AI</li><li>🔹 מידענות עסקית מתקדמת</li><li>🔹 פיתוח כלים חכמים לעסקים</li></ul>",
+            "align": "right",
+            "text_color": "#ffffff"
+          }
+        },
+        {
+          "id": "form-html",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "html": "\n<form action=\"mailto:jose@af-smb.co.il\" method=\"POST\" enctype=\"text/plain\">\n    <input type=\"text\" name=\"name\" placeholder=\"שם מלא\" style=\"width:100%; padding:10px; margin-bottom:10px;\" required>\n    <input type=\"email\" name=\"email\" placeholder=\"אימייל\" style=\"width:100%; padding:10px; margin-bottom:10px;\" required>\n    <input type=\"tel\" name=\"phone\" placeholder=\"טלפון\" style=\"width:100%; padding:10px; margin-bottom:10px;\">\n    <textarea name=\"message\" placeholder=\"הודעה\" rows=\"4\" style=\"width:100%; padding:10px; margin-bottom:10px;\"></textarea>\n    <button type=\"submit\" style=\"background-color: #f9c846; color: #0d1b2a; padding: 12px 24px; border: none; font-weight: bold;\">שליחה</button>\n</form>"
+          }
+        },
+        {
+          "id": "video-placeholder",
+          "elType": "widget",
+          "widgetType": "video",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "aspect_ratio": "16:9"
+          }
+        },
+        {
+          "id": "whatsapp-html",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "html": "<a style=\"position: fixed; bottom: 20px; left: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; font-size: 28px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3);\" href=\"https://wa.me/972549089564\" target=\"_blank\" title=\"שלח לנו הודעה בוואטסאפ\">💬</a>"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
